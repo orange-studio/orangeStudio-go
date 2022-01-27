@@ -11,12 +11,15 @@ import (
 
 func init_router() http.Handler {
 	router := gin.Default()
-	// 工具模块
-	utils_routers := router.Group("/utils")
+	application_routers := router.Group("/go-study")
 	{
-		utils_routers.GET("/uuid", apis.Get_uuid_64)
-		utils_routers.GET("/uuid32", apis.Get_uuid_32)
-		utils_routers.Any("/test", test_http_api)
+		// 工具模块
+		utils_routers := application_routers.Group("/utils")
+		{
+			utils_routers.GET("/uuid", apis.Get_uuid_64)
+			utils_routers.GET("/uuid32", apis.Get_uuid_32)
+			utils_routers.Any("/test", test_http_api)
+		}
 	}
 
 	return router
