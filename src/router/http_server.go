@@ -9,36 +9,40 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func init_router() http.Handler {
+func initRouter() http.Handler {
 	router := gin.Default()
-	application_routers := router.Group("/go-study")
+	applicationRouters := router.Group("/orangestudio")
 	{
 		// 工具模块
-		utils_routers := application_routers.Group("/utils")
+		utilsRouters := applicationRouters.Group("/utils")
 		{
-			utils_routers.GET("/uuid", apis.Get_uuid_64)
-			utils_routers.GET("/uuid32", apis.Get_uuid_32)
-			utils_routers.Any("/test", test_http_api)
+			utilsRouters.GET("/uuid", apis.GetUUID64)
+			utilsRouters.GET("/uuid32", apis.GetUUID32)
+			utilsRouters.GET("/test", testHttpApi)
+		}
+		permissionRouters := applicationRouters.Group("/permission")
+		{
+			permissionRouters.GET("/getuser/:id", apis.GetUser)
 		}
 	}
 
 	return router
 }
 
-func test_http_api(c *gin.Context) {
+func testHttpApi(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"message": "is alive!",
 	})
 }
 
-func start_http_server(router http.Handler, port string) {
+func startHttpServer(router http.Handler, port string) {
 	log.Print("server will started on :", port)
 	http.ListenAndServe(":"+port, router)
 }
 
-func Start_http_server(port int) {
+func StartHttpServer(port int) {
 	// 初始化路由
-	router := init_router()
+	router := initRouter()
 	// 启动服务器
-	start_http_server(router, strconv.Itoa(port))
+	startHttpServer(router, strconv.Itoa(port))
 }

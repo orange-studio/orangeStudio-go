@@ -6,12 +6,12 @@ import (
 	"github.com/google/uuid"
 )
 
-func Get_uuid_64() string {
+func GetUUID64() string {
 	uuid := uuid.New()
 	return uuid.String()
 }
 
-func Get_uuid_32() string {
-	uuid := Get_uuid_64()
+func GetUUID32() string {
+	uuid := GetUUID64()
 	return strings.Replace(uuid, "-", "", -1)
 }

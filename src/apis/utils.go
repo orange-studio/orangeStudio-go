@@ -6,14 +6,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Get_uuid_64(c *gin.Context) {
+func GetUUID64(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"message": utils.Get_uuid_64(),
+		"message": utils.GetUUID64(),
 	})
 }
 
-func Get_uuid_32(c *gin.Context) {
+func GetUUID32(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"message": utils.Get_uuid_32(),
+		"message": utils.GetUUID32(),
 	})
 }

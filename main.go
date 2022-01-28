@@ -1,7 +1,13 @@
 package main
 
-import "go-study-server/src/router"
+import (
+	"go-study-server/src/config"
+	"go-study-server/src/router"
+	"log"
+)
 
 func main() {
-	router.Start_http_server(9527)
+	config.Init()
+	log.Print("start server...")
+	router.StartHttpServer(9527)
 }
