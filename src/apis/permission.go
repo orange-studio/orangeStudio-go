@@ -1,7 +1,7 @@
 package apis
 
 import (
-	"go-study-server/src/dao"
+	"orangestudio-go/src/dao"
 	"strconv"
 
 	"github.com/gin-gonic/gin"

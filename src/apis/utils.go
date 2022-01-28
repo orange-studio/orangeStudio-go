@@ -1,7 +1,7 @@
 package apis
 
 import (
-	"go-study-server/src/utils"
+	"orangestudio-go/src/utils"
 
 	"github.com/gin-gonic/gin"
 )

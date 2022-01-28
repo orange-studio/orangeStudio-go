@@ -1,9 +1,9 @@
 package main
 
 import (
-	"go-study-server/src/config"
-	"go-study-server/src/router"
 	"log"
+	"orangestudio-go/src/config"
+	"orangestudio-go/src/router"
 )
 
 func main() {

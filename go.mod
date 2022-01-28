@@ -1,4 +1,4 @@
-module go-study-server
+module orangestudio-go
 
 go 1.17
 

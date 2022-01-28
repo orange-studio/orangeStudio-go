@@ -1,9 +1,9 @@
 package dao
 
 import (
-	"go-study-server/src/config"
-	"go-study-server/src/entity"
 	"log"
+	"orangestudio-go/src/config"
+	"orangestudio-go/src/entity"
 	"strconv"
 )
 

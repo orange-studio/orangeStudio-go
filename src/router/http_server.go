@@ -1,9 +1,9 @@
 package router
 
 import (
-	"go-study-server/src/apis"
 	"log"
 	"net/http"
+	"orangestudio-go/src/apis"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
